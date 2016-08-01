@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <style>
+        h4{ margin: 40px 0 10px;}
+        .nav-tabs{ margin-bottom: 15px;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-tabs" role="tablist">
+        <!-- active 选中的状态 -->
+        <li class="active" role="presentation">
+            <a href="#">Home</a>
+        </li>
+        <li role="presentation">
+            <a href="#">Hello</a>
+        </li>
+        <li role="presentation">
+            <a href="#">World</a>
+        </li>
+    </ul>
+    <!-- nav-stacked 垂直展示， nav-pills 有背景的tab，nav-tabs这个样式不适用于竖状的展示方式 -->
+     <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li class="active" role="presentation">
+            <a href="#">Home</a>
+        </li>
+        <li role="presentation">
+            <a href="#">Hello</a>
+        </li>
+        <li role="presentation">
+            <a href="#">World</a>
+        </li>
+    </ul>
+     <!-- nav-justified 两端对齐，铺满全屏，每个选项卡是等宽，移动端的分辨率就是竖着的 -->
+     <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active" role="presentation">
+            <a href="#">Home</a>
+        </li>
+        <li role="presentation">
+            <a href="#">Hello</a>
+        </li>
+        <li role="presentation" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                World
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello</a></li>
+            </ul>
+        </li>
+    </ul>
+	<!-- nav-tabs-justified 下面的线是自适应 -->
+	<ul class="nav nav-tabs nav-tabs-justified" role="tablist">
+
+		<li class="active" role="presentation">
+			<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+			<a href="#">Hello</a>
+		</li>
+		<li role="presentation">
+			<a href="#">World</a>
+		</li>
+	</ul>
+
+    <h4>Tabs</h4>
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+        <li><a href="#myhome" data-toggle="tab">MyHome</a></li>
+        <li class="dropdown">
+            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">DropDown<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDropDown">
+                <li><a href="#fat" tabindex="-1" data-toggle="tab">@fat</a></li>
+                <li><a href="#mdo" tabindex="-1" data-toggle="tab">@mdo</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active" id="home">
+            <p>www.baidu.com</p>
+        </div>
+        <div class="tab-pane fade" id="myhome">
+            <p>www.baidu.com</p>
+        </div>
+        <div class="tab-pane" id="fat">
+            <p>www.baidu.com</p>
+        </div>
+        <div class="tab-pane" id="mdo">
+            <p>www.baidu.com</p>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-2.0.2.js"></script>
+<script src="bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $(".nav").find('a').click(function (ev) {
+            ev.preventDefault();
+            $(this).tab("show");
+        });
+    });
+</script>
+</body>
+</html>
